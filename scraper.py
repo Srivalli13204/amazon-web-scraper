@@ -32,14 +32,14 @@ def amazon_login(driver):
         email_input = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.ID, "ap_email"))
         )
-        email_input.send_keys(os.getenv("AMAZON_EMAIL", "isiri1320@gmail.com"))  # Securely load from environment variable
+        email_input.send_keys(os.getenv("AMAZON_EMAIL", "your_email@gmail.com"))  # Securely load from environment variable
         driver.find_element(By.ID, "continue").click()
 
         # Enter password
         password_input = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.ID, "ap_password"))
         )
-        password_input.send_keys(os.getenv("AMAZON_PASSWORD", "Srivalli@04"))  # Securely load from environment variable
+        password_input.send_keys(os.getenv("AMAZON_PASSWORD", "your_password"))  # Securely load from environment variable
         driver.find_element(By.ID, "signInSubmit").click()
 
         print("Login successful!")
